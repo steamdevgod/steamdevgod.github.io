@@ -1,0 +1,174 @@
+/* Подключаем современный шрифт с Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* --- Основные настройки --- */
+:root {
+    --main-bg-color: #050505;
+    --text-color: #e0e0e0;
+    --accent-color: #990000;
+    --accent-hover-color: #b30000;
+    --glow-color: rgba(153, 0, 0, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    
+    /* Анимация появления */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Расстояние между блоками */
+}
+
+/* --- Шапка --- */
+.logo {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* --- Основной контент --- */
+.description {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.trailer-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+    height: 0;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 25px var(--glow-color);
+    margin-bottom: 0rem;
+}
+
+.trailer-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wishlist-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.wishlist-btn:hover {
+    background-color: var(--accent-hover-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--glow-color);
+}
+
+/* --- Социальные ссылки --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* --- Подвал --- */
+footer {
+    margin-top: 2rem;
+    opacity: 0.6;
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--accent-hover-color);
+    text-decoration: underline;
+}
+
+/* --- Стили для страницы политики --- */
+.privacy-policy {
+    text-align: left;
+    gap: 1rem;
+}
+
+.privacy-policy h1 {
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.privacy-policy h2 {
+    color: #ddd;
+    margin-top: 1.5rem;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.privacy-policy p {
+    line-height: 1.8;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
