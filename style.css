@@ -114,40 +114,32 @@ body.page-privacy { display: block; text-align: left; opacity: 1; }
 .privacy-wrapper .back-link { display: inline-block; margin-top: 2rem; color: var(--accent-color); text-decoration: none; font-size: 1.1rem; }
 .privacy-wrapper .back-link:hover { text-decoration: underline; }
 
-/* --- Адаптивность --- */
 @media (max-width: 768px) {
-    body { padding: 1rem; }
-    .gallery-main-content { min-height: 250px; }
+    body {
+        padding: 1rem;
+        padding-bottom: 6rem; /* Оставляем "воздух" для меню */
+    }
 
-    /* Новые стили для центрального и боковых слайдов на мобильных */
+    /* Стили для слайдов (оставляем как есть) */
     .swiper-slide-custom.active-center {
-        width: 80%; /* Центральный слайд теперь занимает 80% ширины вместо 100% */
-        height: 90%; /* Можно тоже немного уменьшить, если нужно больше места */
-        transform: translateX(0) scale(1); /* Оставляем его по центру */
+        width: 80%;
+        height: 90%;
+        transform: translateX(0) scale(1);
     }
     .swiper-slide-custom.active-left {
-        transform: translateX(-55%) scale(0.85); /* Сдвигаем и увеличиваем левый */
-        opacity: 0.7; /* Делаем чуть более видимым */
+        transform: translateX(-55%) scale(0.85);
+        opacity: 0.7;
     }
     .swiper-slide-custom.active-right {
-        transform: translateX(55%) scale(0.85); /* Сдвигаем и увеличиваем правый */
-        opacity: 0.7; /* Делаем чуть более видимым */
+        transform: translateX(55%) scale(0.85);
+        opacity: 0.7;
     }
     
-    /* Исправление для выпадающего меню на мобильных (уже было, просто повторяем для целостности) */
+    /* Стили для меню (оставляем как есть) */
     .dropdown {
-        bottom: auto; /* Сбрасываем позиционирование от низа */
-        top: 100%;    /* Позиционируем от верха иконки (чтобы меню было ПОД ней) */
-        margin-bottom: 0;
-        margin-top: 10px; /* Добавляем отступ сверху */
+        bottom: 100%;
+        top: auto;
+        margin-bottom: 10px;
+        margin-top: 0;
     }
-}
-
-/* Остальные @media блоки (например, @media (max-width: 480px)) оставляем без изменений */
-@media (max-width: 480px) {
-    nav ul { gap: 1rem; }
-    nav a { font-size: 1rem; }
-    .wishlist-btn { font-size: 1.2rem; padding: 12px 30px; }
-    .social-links { gap: 1.5rem; }
-    .social-item { font-size: 1.8rem; }
 }
