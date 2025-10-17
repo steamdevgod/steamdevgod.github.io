@@ -126,3 +126,14 @@ body.page-privacy { display: block; text-align: left; opacity: 1; }
     .social-links { gap: 1.5rem; }
     .social-item { font-size: 1.8rem; }
 }
+
+/* ... тут все ваши предыдущие стили ... */
+
+@media (max-width: 768px) {
+  .swiper-slide-custom.active-left {
+    transform: translateX(-35%) scale(0.7);
+  }
+  .swiper-slide-custom.active-right {
+    transform: translateX(35%) scale(0.7);
+  }
+}
