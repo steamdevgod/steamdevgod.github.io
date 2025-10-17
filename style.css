@@ -116,24 +116,20 @@ body.page-privacy { display: block; text-align: left; opacity: 1; }
 
 @media (max-width: 768px) {
     body { padding: 1rem; }
-    .swiper-slide-custom.active-left, .swiper-slide-custom.active-right { display: none; }
     .gallery-main-content { min-height: 250px; }
+
+    .swiper-slide-custom.active-left {
+        transform: translateX(-35%) scale(0.7);
+    }
+    .swiper-slide-custom.active-right {
+        transform: translateX(35%) scale(0.7);
+    }
 }
+
 @media (max-width: 480px) {
     nav ul { gap: 1rem; }
     nav a { font-size: 1rem; }
     .wishlist-btn { font-size: 1.2rem; padding: 12px 30px; }
     .social-links { gap: 1.5rem; }
     .social-item { font-size: 1.8rem; }
-}
-
-/* ... тут все ваши предыдущие стили ... */
-
-@media (max-width: 768px) {
-  .swiper-slide-custom.active-left {
-    transform: translateX(-35%) scale(0.7);
-  }
-  .swiper-slide-custom.active-right {
-    transform: translateX(35%) scale(0.7);
-  }
 }
