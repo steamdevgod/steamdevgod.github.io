@@ -70,24 +70,38 @@
                 updateSlideVisibility(); startAutoplay();
             }
 
-            const socialItems = document.querySelectorAll('.social-item');
-            socialItems.forEach(item => {
-                const dropdown = item.querySelector('.dropdown');
-                if (dropdown) {
-                    item.addEventListener('mouseenter', () => {
-                        dropdown.style.visibility = 'visible';
-                        dropdown.style.opacity = '1';
-                    });
-                    item.addEventListener('mouseleave', () => {
-                        dropdown.style.visibility = 'hidden';
-                        dropdown.style.opacity = '0';
-                    });
-                }
-            });
+const socialItemsWithDropdown = document.querySelectorAll('.social-item .dropdown');
+
+socialItemsWithDropdown.forEach(dropdown => {
+    const item = dropdown.parentElement;
+    item.addEventListener('click', (event) => {
+        event.stopPropagation();
+        
+        const isVisible = dropdown.style.visibility === 'visible';
+
+        document.querySelectorAll('.social-item .dropdown').forEach(d => {
+            d.style.visibility = 'hidden';
+            d.style.opacity = '0';
+        });
+
+        if (!isVisible) {
+            dropdown.style.visibility = 'visible';
+            dropdown.style.opacity = '1';
+        }
+    });
+});
+
+document.addEventListener('click', () => {
+    socialItemsWithDropdown.forEach(dropdown => {
+        dropdown.style.visibility = 'hidden';
+        dropdown.style.opacity = '0';
+    });
+});
         });
     </script>
 </body>
 </html>
+
 
 
 
