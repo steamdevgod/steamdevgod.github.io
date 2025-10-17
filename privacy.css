@@ -1,0 +1,80 @@
+/* Подключаем современный шрифт с Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* --- Основные настройки для этой страницы --- */
+:root {
+    --main-bg-color: #050505;
+    --text-color: #e0e0e0;
+    --accent-color: #990000;
+    --accent-hover-color: #b30000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.logo {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+/* --- ТВОИ ОРИГИНАЛЬНЫЕ СТИЛИ + НОВЫЕ ОТСТУПЫ --- */
+.privacy-policy {
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+}
+
+.privacy-policy header {
+    text-align: center;
+}
+
+.privacy-policy h1 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.privacy-policy h2 {
+    color: #ddd;
+    margin-top: 2.5rem; /* <-- Увеличил отступ сверху */
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem; /* <-- Добавил отступ снизу */
+}
+
+.privacy-policy p {
+    line-height: 1.8;
+    margin-bottom: 1rem; /* <-- Увеличил отступ между параграфами */
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 3rem; /* <-- Увеличил отступ сверху */
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

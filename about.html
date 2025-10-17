@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - P.O.N.</title>
+    <link rel="icon" type="image/png" href="LOGO_ICON.png" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="LOGO.PNG" alt="P.O.N. Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="text-page">
+            <h1>About The Game</h1>
+            <p>P.O.N. — a realistic first-person stealth-action crime-horror game that lets you see superheroes through the eyes of crime. Players complete missions for a criminal syndicate, staying connected through a tactical tablet. The core mechanic is a super AI that creates tension with its unpredictable and brutal attacks..</p>
+            <h2>Team P.O.N.</h2>
+            <p>We are an indie team of two developers (Devci & Mars) who started our journey on July 14, 2025. Our passion for horror and co-op games inspired us to create P.O.N. We have poured our souls into this project and are insanely happy to see such amazing support from the community!</p>
+        </main>
+
+        <footer>
+    <div class="social-links">
+        <div class="social-item">
+            <i class="fab fa-youtube"></i>
+            <div class="dropdown">
+                <a href="https://www.youtube.com/@steampon" target="_blank">P.O.N.</a>
+                <a href="https://www.youtube.com/@mars_dev" target="_blank">Mars</a>
+            </div>
+        </div>
+        <div class="social-item">
+            <i class="fab fa-tiktok"></i>
+            <div class="dropdown">
+                <a href="https://www.tiktok.com/@devci__" target="_blank">Devci</a>
+                <a href="https://www.tiktok.com/@marsdevgod" target="_blank">Mars</a>
+            </div>
+        </div>
+        <div class="social-item">
+            <i class="fab fa-instagram"></i>
+            <div class="dropdown">
+                <a href="https://www.instagram.com/devci_inc/" target="_blank">Devci</a>
+                <a href="https://www.instagram.com/marsdevgod" target="_blank">Mars</a>
+            </div>
+        </div>
+        <div class="social-item">
+            <a href="https://discord.gg/KUwMKcFucr" target="_blank" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <p>&copy; 2025 P.O.N. Game. All rights reserved.</p>
+    </div>
+</footer>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('loaded');
+
+        // 👇 НОВЫЙ КОД ДЛЯ МЕНЮ СОЦСЕТЕЙ 👇
+        const socialItems = document.querySelectorAll('.social-item');
+        socialItems.forEach(item => {
+            const dropdown = item.querySelector('.dropdown');
+            if (dropdown) {
+                item.addEventListener('mouseenter', () => {
+                    dropdown.style.visibility = 'visible';
+                    dropdown.style.opacity = '1';
+                });
+                item.addEventListener('mouseleave', () => {
+                    dropdown.style.visibility = 'hidden';
+                    dropdown.style.opacity = '0';
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
