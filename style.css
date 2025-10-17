@@ -26,8 +26,6 @@ body {
     min-height: 100vh;
     padding: 2rem;
     text-align: center;
-    
-    /* Анимация появления */
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -38,137 +36,93 @@ body.loaded {
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Расстояние между блоками */
-}
-
-/* --- Шапка --- */
-.logo {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-/* --- Основной контент --- */
-.description {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
-
-.trailer-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
-    height: 0;
-    border: 2px solid var(--accent-color);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 25px var(--glow-color);
-    margin-bottom: 0rem;
-}
-
-.trailer-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.wishlist-btn {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 15px 40px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 0 15px var(--glow-color);
-}
-
-.wishlist-btn:hover {
-    background-color: var(--accent-hover-color);
-    transform: scale(1.05);
-    box-shadow: 0 0 30px var(--glow-color);
-}
-
-/* --- Социальные ссылки --- */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 1rem;
-}
-
-.social-links a {
-    color: var(--text-color);
-    font-size: 2rem;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--accent-color);
-    transform: scale(1.2);
-}
-
-/* --- Подвал --- */
-footer {
-    margin-top: 2rem;
-    opacity: 0.6;
-}
-
-footer a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: var(--accent-hover-color);
-    text-decoration: underline;
-}
-
-/* --- Стили для страницы политики --- */
-.privacy-policy {
-    text-align: left;
     gap: 1rem;
 }
 
-.privacy-policy h1 {
-    color: var(--accent-color);
-    text-align: center;
-}
+.logo { max-width: 300px; width: 100%; height: auto; }
+nav { width: 100%; margin: 1rem 0; }
+nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; padding: 0; }
+nav a { color: var(--text-color); text-decoration: none; font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; padding: 0.5rem 0; transition: all 0.3s ease; border-bottom: 2px solid transparent; }
+nav a:hover, nav a:focus { color: var(--accent-color); outline: none; }
+nav a.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
 
-.privacy-policy h2 {
+.description { font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem auto; line-height: 1.6; }
+.wishlist-btn { display: inline-block; background-color: var(--accent-color); color: #fff; padding: 15px 40px; text-decoration: none; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border-radius: 5px; transition: all 0.3s ease; border: 2px solid var(--accent-color); box-shadow: 0 0 15px var(--glow-color); margin-top: 2rem; }
+.wishlist-btn:hover, .wishlist-btn:focus { background-color: var(--accent-hover-color); transform: scale(1.05); box-shadow: 0 0 30px var(--glow-color); outline: none; }
+
+.media-gallery { position: relative; width: 100%; max-width: 800px; margin: 2rem auto; }
+.gallery-main-content { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }
+.swiper-container-custom, .swiper-wrapper-custom { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.swiper-slide-custom { position: absolute; width: 75%; height: 90%; opacity: 0; transform: translateX(100%) scale(0.8); transition: all 0.5s ease-in-out; border-radius: 8px; overflow: hidden; cursor: pointer; border: 2px solid #222; }
+.swiper-slide-custom.active-center { opacity: 1; transform: translateX(0) scale(1); z-index: 10; width: 100%; height: 100%; border-color: var(--accent-color); box-shadow: 0 0 25px var(--glow-color); }
+.swiper-slide-custom.active-left { opacity: 0.5; transform: translateX(-65%) scale(0.8); z-index: 5; }
+.swiper-slide-custom.active-right { opacity: 0.5; transform: translateX(65%) scale(0.8); z-index: 5; }
+.swiper-slide-custom img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.swiper-slide-custom.video-slide .trailer-container { width: 100%; height: 100%; background-color: #000; }
+.swiper-slide-custom iframe { width: 100%; height: 100%; border: none; }
+.video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.swiper-slide-custom.active-center .video-overlay { display: none; }
+
+.lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; animation: fadeIn 0.3s; }
+.lightbox-content { display: block; max-width: 90%; max-height: 90%; object-fit: contain; box-shadow: 0 0 30px var(--glow-color); border-radius: 8px; animation: zoomIn 0.3s; }
+.close-lightbox { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+.close-lightbox:hover, .close-lightbox:focus { color: var(--accent-color); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomIn { from { transform: scale(0.8); } to { transform: scale(1); } }
+
+footer { margin-top: 2rem; opacity: 0.8; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.footer-links { line-height: 1.2; opacity: 0.6; }
+.footer-links p { margin: 0; }
+.footer-links a { color: var(--text-color); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--accent-hover-color); text-decoration: underline; }
+.social-links { display: flex; justify-content: center; gap: 2rem; }
+.social-item { position: relative; font-size: 2rem; cursor: pointer; transition: all 0.3s ease; }
+.social-item:hover { color: var(--accent-color); transform: scale(1.2); }
+.social-item a { color: inherit; text-decoration: none; }
+.dropdown { visibility: hidden; opacity: 0; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background-color: #1a1a1a; border-radius: 5px; padding: 0.5rem; box-shadow: 0 0 15px rgba(0,0,0,0.5); z-index: 100; width: 120px; transition: visibility 0.2s, opacity 0.2s ease; margin-bottom: 10px; }
+.dropdown a { display: block; padding: 0.5rem; color: var(--text-color); text-decoration: none; font-size: 1rem; text-transform: none; letter-spacing: 0; border-bottom: none; text-align: center; }
+.dropdown a:hover { background-color: var(--accent-color); color: #fff; border-radius: 3px; }
+
+.text-page { text-align: left; max-width: 700px; margin: 0 auto; }
+.text-page h1 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 1rem; 
+}
+.text-page h2 {
     color: #ddd;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     border-bottom: 1px solid var(--accent-color);
     padding-bottom: 0.5rem;
+    margin-bottom: 1rem; 
 }
+.text-page p { line-height: 1.8; margin-bottom: 1rem; }
+.faq-item { margin-bottom: 1.5rem; }
+.faq-item h3 { color: var(--accent-color); margin-bottom: 0.5rem; border-bottom: none; padding-bottom: 0;} /* Убираем двойную линию для h3 */
 
-.privacy-policy p {
-    line-height: 1.8;
+body.page-privacy { display: block; text-align: left; opacity: 1; }
+.privacy-wrapper { width: 100%; max-width: 800px; margin: 2rem auto; }
+.privacy-wrapper header { text-align: center; margin-bottom: 2rem; }
+.privacy-wrapper main h1 { color: var(--accent-color); text-align: center; margin-bottom: 1rem; }
+.privacy-wrapper main h2 { color: #ddd; margin-top: 1.5rem; border-bottom: 1px solid var(--accent-color); padding-bottom: 0.5rem; }
+.privacy-wrapper main p { line-height: 1.8; }
+.privacy-wrapper .back-link { display: inline-block; margin-top: 2rem; color: var(--accent-color); text-decoration: none; font-size: 1.1rem; }
+.privacy-wrapper .back-link:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+    body { padding: 1rem; }
+    .swiper-slide-custom.active-left, .swiper-slide-custom.active-right { display: none; }
+    .gallery-main-content { min-height: 250px; }
 }
-
-.back-link {
-    display: inline-block;
-    margin-top: 2rem;
-    color: var(--accent-color);
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-.back-link:hover {
-    text-decoration: underline;
+@media (max-width: 480px) {
+    nav ul { gap: 1rem; }
+    nav a { font-size: 1rem; }
+    .wishlist-btn { font-size: 1.2rem; padding: 12px 30px; }
+    .social-links { gap: 1.5rem; }
+    .social-item { font-size: 1.8rem; }
 }
