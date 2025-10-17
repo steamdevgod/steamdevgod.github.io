@@ -120,6 +120,12 @@ body.page-privacy { display: block; text-align: left; opacity: 1; }
         padding-bottom: 6rem; /* Оставляем "воздух" для меню */
     }
 
+    .wishlist-btn {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+        white-space: nowrap; /* 👇 ЗАПРЕЩАЕМ ПЕРЕНОС ТЕКСТА 👇 */
+    }
+
     /* Стили для слайдов (оставляем как есть) */
     .swiper-slide-custom.active-center {
         width: 80%;
